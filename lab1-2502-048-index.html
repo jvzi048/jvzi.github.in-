@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>美丽校园-春华</title>
+    <!-- 给页面加一点基础样式，更美观 -->
+    <style>
+        body {
+            font-family: "微软雅黑", sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        p {
+            text-indent: 2em;
+            line-height: 1.8;
+            font-size: 17px;
+            color: #333;
+        }
+        h3 {
+            color: #2c5c3e;
+            border-left: 4px solid #50c878;
+            padding-left: 10px;
+        }
+        a {
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. 一级标题：美丽校园—春华 -->
+    <h1 align="center" style="color: #2c5c3e; margin-bottom: 10px;">美丽校园—春华</h1>
+    <!-- 2. 二级标题：作者信息（把这里改成你自己的名字！） -->
+    <h2 align="center" style="color: #555; font-weight: normal;">作者：鲁东大学 计算机科学与技术 居子丁</h2>
+    <!-- 3. 水平线分割 -->
+    <hr color="#50c878" size="2" style="margin: 20px 0;">
+
+    <!-- 4. 锚点跳转链接：实现页内跳转 -->
+    <p style="text-indent: 0; margin-left: 50px; font-size: 18px;">
+        <a href="#nature">👉 跳转到自然风光</a> &nbsp;&nbsp;&nbsp;
+        <a href="#culture">👉 跳转到人文景观</a> &nbsp;&nbsp;&nbsp;
+        <a href="#gallery">👉 跳转到校园相册</a>
+    </p>
+
+    <!-- 5. 三级标题：自然风光（带id做锚点） -->
+    <h3 id="nature" style="margin-left: 50px;">自然风光</h3>
+    <p style="margin: 0 50px 20px 50px;">
+        春风漫过鲁东大学的校园，把一整个冬天的沉寂都唤醒了。逸夫楼前的玉兰花率先绽放，洁白的花瓣缀满枝头，像落在树梢的云朵，风一吹便送来阵阵清甜的香气。镜湖的冰早已融化，湖水澄澈如镜，倒映着蓝天、垂柳和岸边的春花，成群的水鸟在水面自在游弋，给春日的校园添了几分灵动。图书馆旁的樱花大道是春日里最浪漫的风景，粉白的樱花如云似霞，风过之处便下起簌簌的樱花雨，落在发梢、肩头，连空气里都裹着青春的甜意。操场边的草坪像一块柔软的绿毯，同学们或坐或卧，晒着春日的暖阳，耳边是清脆的鸟鸣和爽朗的笑声，整个校园都浸在温柔的春光里。
+    </p>
+    <p style="margin: 0 50px 20px 50px;">
+        沿着校园的小路漫步，随处可见抽芽的树木、盛放的迎春，连墙角的小草都探出了嫩绿的脑袋，努力拥抱阳光。北区的小树林里，阳光透过枝叶洒下斑驳的光影，踩在松软的落叶上，听着鸟鸣虫叫，仿佛置身于城市中的天然氧吧。宿舍楼下的玉兰树开得热烈，满树繁花像雪堆缀满枝头，风一吹便落满肩头，连晾晒的衣物都沾了花香。校园里的流浪猫在花丛中慵懒地晒着太阳，圆溜溜的眼睛好奇地打量着来往的同学，成为春日里最治愈的风景。春日的鲁东大学，每一处角落都藏着生机与美好，每一缕风都带着青春的气息，让每一个身处其中的人，都能感受到春天的治愈与力量。
+    </p>
+
+    <!-- 6. 三级标题：人文景观（带id做锚点） -->
+    <h3 id="culture" style="margin-left: 50px;">人文景观</h3>
+    <!-- 无序列表：列出至少3个校园地标 -->
+    <ul style="margin-left: 70px; font-size: 17px; line-height: 2; color: #333;">
+        <li>鲁东大学图书馆</li>
+        <li>镜湖</li>
+        <li>逸夫教学楼</li>
+        <li>樱花大道</li>
+        <li>红顶标志性建筑</li>
+    </ul>
+
+    <!-- 7. 校园相册：用div做容器，完全满足任务要求 -->
+    <h3 id="gallery" style="margin-left: 50px; margin-top: 30px;">校园相册</h3>
+    <!-- 外层div：左边留白50px，flex布局让图片均匀横排 -->
+    <div style="margin-left: 50px; display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 50px;">
+        
+        <!-- 第1张图：小葵花（div宽高220px，图片填满容器） -->
+        <div style="width: 220px; height: 220px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="cat.jpg" alt="小葵花" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <!-- 第2张图：麻雀戏柳 -->
+        <div style="width: 220px; height: 220px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="bird.jpg" alt="麻雀戏柳" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <!-- 第3张图：校园一角 -->
+        <div style="width: 220px; height: 220px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="building.jpg" alt="校园一角" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- 第4张图：宿舍之春 -->
+        <div style="width: 220px; height: 220px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="flower.jpg" alt="宿舍之春" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <!-- 第5张图：玉兰花特写 -->
+        <div style="width: 220px; height: 220px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="yulan.jpg" alt="玉兰花特写" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <!-- 第6张图：春水 -->
+        <div style="width: 220px; height: 220px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="water.jpg" alt="春水" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+    </div>
+
+</body>
+</html>
