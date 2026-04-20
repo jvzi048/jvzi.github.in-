@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数字展销平台首页</title>
-    <!-- 引入CSS样式文件 -->
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ✅ 已修复：前面加了斜杠 / -->
     <link rel="stylesheet" href="/css/lab2.css">
-   
 </head>
 <body>
-    <!-- 头部区域：Logo + 导航（固定定位 + 浮动布局） -->
     <header id="header">
         <div class="container">
             <div class="logo">
@@ -28,9 +28,7 @@
         </div>
     </header>
 
-    <!-- 主体内容区：三栏布局（浮动布局） -->
     <div id="container">
-        <!-- 左侧栏：图书分类导航（相对定位） -->
         <aside id="left-sidebar">
             <h3>图书分类</h3>
             <ul class="nav-list">
@@ -42,16 +40,13 @@
             </ul>
         </aside>
 
-        <!-- 中间栏：主要内容（浮动布局） -->
         <main id="main-content">
-            <!-- 图书展示区（父相子绝：鼠标悬停效果） -->
             <section class="book-showcase">
                 <h3>重点推荐</h3>
                 <div class="book-grid">
-                    <!-- 悬停特效卡片（父元素相对定位，子元素绝对定位） -->
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="img/web.jpeg" alt="Web前端开发">
+                            <img src="/img/web.jpeg" alt="Web前端开发">
                         </div>
                         <div class="book-info">
                             <h4>Web前端开发</h4>
@@ -59,10 +54,9 @@
                         </div>
                         <div class="overlay">查看详情</div>
                     </div>
-                    <!-- 普通卡片 -->
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="img/c.jpg" alt="C语言">
+                            <img src="/img/c.jpg" alt="C语言">
                         </div>
                         <div class="book-info">
                             <h4>C语言</h4>
@@ -72,71 +66,64 @@
                 </div>
             </section>
 
-   <section class="hot-items">
-  <h3>热门推荐</h3>
-  <!-- 父容器：用flex布局，自动换行 -->
-  <div class="books-list">
-    <div class="book-item">
-      <img src="img/hong.jpg" alt="红楼梦">
-      红楼梦
-    </div>
-    <div class="book-item">
-      <img src="img/san.jpg" alt="三国演义">
-      三国演义
-    </div>
-    <div class="book-item">
-      <img src="img/shui.jpg" alt="水浒传">
-      水浒传
-    </div>
-    <div class="book-item">
-      <img src="img/xi.jpg" alt="西游记">
-      西游记
-    </div>
-  </div>
-</section>
-            <!-- 新书上市（Table布局） -->
-<section class="new-books">
-    <h3>新书上市</h3>
-    <!-- 关键：添加表格标签 -->
-    <table>
-        <!-- 表头：书名、作者、价格 -->
-        <thead>
-            <tr>
-                <th>书名</th>
-                <th>作者</th>
-                <th>价格</th>
-            </tr>
-        </thead>
-        <!-- 表格内容：每一行对应一本书 -->
-        <tbody>
-            <tr>
-                <td>HTML5与CSS3</td>
-                <td>鱿鱼</td>
-                <td>¥5201314.00</td>
-            </tr>
-            <tr>
-                <td>JavaScript高级</td>
-                <td>小葵花</td>
-                <td>¥1688.00</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
+            <section class="hot-items">
+                <h3>热门推荐</h3>
+                <div class="books-list">
+                    <div class="book-item">
+                        <img src="/img/hong.jpg" alt="红楼梦">
+                        红楼梦
+                    </div>
+                    <div class="book-item">
+                        <img src="/img/san.jpg" alt="三国演义">
+                        三国演义
+                    </div>
+                    <div class="book-item">
+                        <img src="/img/shui.jpg" alt="水浒传">
+                        水浒传
+                    </div>
+                    <div class="book-item">
+                        <img src="/img/xi.jpg" alt="西游记">
+                        西游记
+                    </div>
+                </div>
+            </section>
 
+            <section class="new-books">
+                <h3>新书上市</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>书名</th>
+                            <th>作者</th>
+                            <th>价格</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML5与CSS3</td>
+                            <td>鱿鱼</td>
+                            <td>¥5201314.00</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript高级</td>
+                            <td>小葵花</td>
+                            <td>¥1688.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </main>
 
-        <!-- 右侧栏：促销信息（固定定位） -->
         <aside id="right-sidebar">
             <div class="promo-box">
                 <h3>促销信息</h3>
-                全场满100减100！
-                新用户注册送礼券
+                全场满100减100！<br>
+                新用户注册送礼券<br>
                 会员日双倍积分
             </div>
         </aside>
     </div>
 
-    <!-- 底部 -->
     <footer>
         © 2023 网上书店实验演示
     </footer>
