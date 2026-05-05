@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字展销平台首页</title>
+    <!-- 引入CSS样式文件 -->
+    <link rel="stylesheet" href="css/lab4.css">
+    <!-- 可选：引入FontAwesome图标库（如需图标） -->
+    <link rel="stylesheet" href="../css/lab4.css">
+</head>
+<body><!-- 导航栏修改：添加登录按钮 -->
+<header id="header">
+    <div class="container">
+        <!-- ... 原有 Logo 和导航 ... -->
+        <div class="login-container">
+            <button id="showLoginBtn">登录 / 注册</button>
+        </div>
+    </div>
+</header>
+
+    <!-- 头部区域：Logo + 导航（固定定位 + 浮动布局） -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <h1>数字展销平台</h1>
+                <span class="subtitle">实验3-2502-048</span>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">计算机</a></li>
+                    <li><a href="#">文学</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主体内容区：三栏布局（浮动布局） -->
+    <div id="container">
+        <!-- 左侧栏：图书分类导航（相对定位） -->
+        <aside id="left-sidebar">
+            <h3>图书分类</h3>
+            <ul class="nav-list">
+                <li><a href="#">编程语言</a></li>
+                <li><a href="#">网页设计</a></li>
+                <li><a href="#">数据库</a></li>
+                <li><a href="#">人工智能</a></li>
+                <li><a href="#">历史传记</a></li>
+            </ul>
+        </aside>
+
+        <!-- 中间栏：主要内容（浮动布局） -->
+        <main id="main-content">
+            <!-- 图书展示区（父相子绝：鼠标悬停效果） -->
+            <section class="book-showcase">
+                <h3>重点推荐</h3>
+                <div class="book-grid">
+                    <!-- 悬停特效卡片（父元素相对定位，子元素绝对定位） -->
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="img/web.jpeg" alt="Web前端开发">
+                        </div>
+                        <div class="book-info">
+                            <h4>Web前端开发</h4>
+                            价格: ¥2345.00
+                        </div>
+                        <div class="overlay">查看详情</div>
+                    </div>
+                    <!-- 普通卡片 -->
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="img/c.jpg" alt="C语言">
+                        </div>
+                        <div class="book-info">
+                            <h4>C语言</h4>
+                            价格: ¥4399.00
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+   <section class="hot-items">
+  <h3>热门推荐</h3>
+  <!-- 父容器：用flex布局，自动换行 -->
+  <div class="books-list">
+    <div class="book-item">
+      <img src="img/hong.jpg" alt="红楼梦">
+      红楼梦
+    </div>
+    <div class="book-item">
+      <img src="img/san.jpg" alt="三国演义">
+      三国演义
+    </div>
+    <div class="book-item">
+      <img src="img/shui.jpg" alt="水浒传">
+      水浒传
+    </div>
+    <div class="book-item">
+      <img src="img/xi.jpg" alt="西游记">
+      西游记
+    </div>
+  </div>
+</section>
+            <!-- 新书上市（Table布局） -->
+<section class="new-books">
+    <h3>新书上市</h3>
+    <!-- 关键：添加表格标签 -->
+    <table>
+        <!-- 表头：书名、作者、价格 -->
+        <thead>
+            <tr>
+                <th>书名</th>
+                <th>作者</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <!-- 表格内容：每一行对应一本书 -->
+        <tbody>
+            <tr>
+                <td>HTML5与CSS3</td>
+                <td>鱿鱼</td>
+                <td>¥5201314.00</td>
+            </tr>
+            <tr>
+                <td>JavaScript高级</td>
+                <td>小葵花</td>
+                <td>¥1688.00</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+        </main>
+
+        <!-- 右侧栏：促销信息（固定定位） -->
+        <aside id="right-sidebar">
+            <div class="promo-box">
+                <h3>促销信息</h3>
+                全场满100减100！
+                新用户注册送礼券
+                会员日双倍积分
+            </div>
+        </aside>
+    </div>
+
+ 
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录弹窗修复示例</title>
+    <style>
+        /* 基础重置 */
+        body { margin: 0; font-family: sans-serif; background: #f0f0f0; }
+
+        /* 顶部导航栏模拟 */
+        .navbar {
+            background: #673ab7; /* 紫色 */
+            padding: 15px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links a { color: white; margin: 0 15px; text-decoration: none; }
+
+        /* === 重点：登录按钮样式 === */
+        .login-btn {
+            background: #fff;
+            color: #673ab7;
+            border: 1px solid #673ab7;
+            /* 让按钮变大一点 */
+            padding: 8px 16px; 
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .login-btn:hover {
+            background: #eee;
+        }
+
+        /* === 重点：弹窗遮罩层 === */
+        .modal-overlay {
+            display: none; /* 默认隐藏 */
+            position: fixed; /* 固定在视口，不受滚动影响 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
+            z-index: 999; /* 确保在最上层 */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* === 重点：弹窗内容框 === */
+        .modal-content {
+            background: #fff;
+            width: 400px;
+            /* 关键：让内部表单可以绝对定位 */
+            position: relative; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* 关闭按钮 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        .close-btn:hover { color: #333; }
+
+        /* 表单样式 */
+        .form-container { padding: 30px; }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background: #673ab7;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <div class="navbar">
+        <div class="logo">数字展销平台</div>
+        <div class="nav-links">
+            
+        </div>
+        <!-- 登录按钮 -->
+        <button id="openLoginBtn" class="login-btn">登录/注册</button>
+    </div>
+
+  
+
+    <!-- === 重点：登录弹窗 HTML 结构 === -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            
+            <!-- 登录表单 -->
+            <div id="loginForm" class="form-container">
+                <h2>用户登录</h2>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <button type="submit">登录</button>
+                
+                <!-- 注册链接集成在里面 -->
+                <p style="text-align: center; margin-top: 15px;">
+                    还没有账号？<a href="#" id="showRegisterLink">立即注册</a>
+                
+            </div>
+
+            <!-- 注册表单 (默认隐藏) -->
+            <div id="registerForm" class="form-container" style="display: none;">
+                <h2>用户注册</h2>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <input type="password" placeholder="确认密码">
+                <button type="submit">注册</button>
+                
+                <p style="text-align: center; margin-top: 15px;">
+                    已有账号？<a href="#" id="showLoginLink">去登录</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 获取元素
+        const openBtn = document.getElementById('openLoginBtn');
+        const modal = document.getElementById('loginModal');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const showRegister = document.getElementById('showRegisterLink');
+        const showLogin = document.getElementById('showLoginLink');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        // 2. 打开弹窗
+        openBtn.onclick = function() {
+            modal.style.display = 'flex'; // 使用 flex 让内容居中
+        }
+
+        // 3. 关闭弹窗
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // 4. 切换表单
+        showRegister.onclick = function(e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        }
+
+        showLogin.onclick = function(e) {
+            e.preventDefault();
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        }
+
+        // 5. 点击遮罩层也关闭 (可选)
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>实验4 - 动效实现</title>
+    <!-- 严格按要求引入CSS样式表 -->
+    <link rel="stylesheet" href="CSS/lab4.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 (包含按钮和图标) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">数字展销平台</div>
+            <div class="nav-right">
+                <!-- 搜索图标 -->
+               <span class="icon cart-icon">🛒</span> <!-- 购物车 -->
+        <span class="icon search-icon">🔍</span> <!-- 搜索 -->
+               
+            </div>
+        </div>
+    </header>
+
+    <!-- 热门图书区域 -->
+    <section class="hot-books">
+        <div class="container">
+            <h2>热门图书</h2>
+            <div class="book-list">
+                <div class="book-item">
+                    <img src="img/jing.jpg" alt="热门图书1">
+                </div>
+                <div class="book-item">
+                    <img src="img/guai.jpg" alt="热门图书2">
+                </div>
+                <div class="book-item">
+                    <img src="img/ai.jpg" alt="热门图书3">
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+<!-- 轮播图区域 -->
+    <section class="carousel-section">
+        <div class="container">
+           
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="img/lun1.jpg" alt="轮播图1">
+                    <img src="img/lun2.jpg" alt="轮播图2">
+                    <img src="img/lun3.jpg" alt="轮播图3">
+                </div>
+                <!-- 如果有更多轮播图，可以继续添加 slide -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 登录/注册弹窗 (默认隐藏) -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            
+            <!-- 登录表单 -->
+            <div id="loginForm" class="form-container">
+                <h2>用户登录</h2>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <button type="submit" class="btn-submit">登录</button>
+                
+                <p style="text-align: center; margin-top: 15px;">
+                    还没有账号？<a href="#" id="showRegisterLink">立即注册</a>
+                
+            </div>
+
+            <!-- 注册表单 (默认隐藏) -->
+            <div id="registerForm" class="form-container" style="display: none;">
+                <h2>用户注册</h2>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <input type="password" placeholder="确认密码">
+                <button type="submit" class="btn-submit">注册</button>
+                
+                <p style="text-align: center; margin-top: 15px;">
+                    已有账号？<a href="#" id="showLoginLink">去登录</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 简单的弹窗控制逻辑 (实验通常不要求JS，但此处为完整功能)
+        const openBtn = document.getElementById('openLoginBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const modal = document.getElementById('loginModal');
+        const showRegLink = document.getElementById('showRegisterLink');
+        const showLoginLink = document.getElementById('showLoginLink');
+       
+
+        openBtn.addEventListener('click', () => modal.style.display = 'flex');
+        closeBtn.addEventListener('click', () => modal.style.display = 'none');
+        
+        showRegLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        });
+        
+        showLoginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+
+        // 点击遮罩层关闭弹窗
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
